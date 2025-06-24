@@ -13,7 +13,7 @@ We analyze page statistics, identify trends, and compare performance across appr
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
 - [Approaches](#approaches)
-- [Analytical Queries & Results](#analytical-queries--results)
+- [Problem Definitions](#problem-definitions)
 - [Performance Comparison](#performance-comparison)
 - [Conclusion](#conclusion)
 
@@ -52,15 +52,24 @@ It benchmarks both paradigms across five key queries and compares performance ba
 
 ---
 
-## 📊 Analytical Queries & Results
+## 🧩 Problem Definitions
 
-| Query No. | Description                                                                 | Key Result Example                                                 |
-|-----------|-----------------------------------------------------------------------------|---------------------------------------------------------------------|
-| **1**     | **Page Size Statistics**: Calculate minimum, maximum, and average size     | ➤ Cleaned lines: `3,324,026` <br> ➤ Malformed: `103` lines removed |
-| **2**     | **Titles Starting with “The”**: Count such titles & non-English ones       | ➤ Titles starting with “The”: extracted and filtered               |
-| **3**     | **Unique Terms in Titles**: Normalize & count terms split by `_`           | ➤ Applied lowercase and cleaned punctuation                        |
-| **4**     | **Title Frequency Analysis**: Count repeated titles                        | ➤ Computed frequency distribution of titles                        |
-| **5**     | **Combine Same Title Pages**: Merge records for identical titles           | ➤ Grouped pages by title and displayed combined results            |
+The project addresses the following five data analysis problems:
+
+1. **Page Size Statistics**  
+   Compute the minimum, maximum, and average page size across all entries.
+
+2. **Titles Starting with "The"**  
+   Count how many page titles start with “The” and how many of them are not part of the English project (`project != "en"`).
+
+3. **Unique Terms in Titles**  
+   Determine the number of unique normalized terms in page titles. Titles are split by “_”, with terms lowercased and cleaned of non-alphanumeric characters.
+
+4. **Title Frequency Count**  
+   Extract each title and count the number of times it appears in the dataset.
+
+5. **Merge Duplicate Titles**  
+   Group and combine records with identical titles from different sources and display each matched pair.
 
 ---
 
